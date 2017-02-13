@@ -44,7 +44,7 @@ namespace ForgetTheMilk
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Task/Error");
             }
 
             app.UseStaticFiles();
@@ -53,7 +53,7 @@ namespace ForgetTheMilk
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Task}/{action=Index}/{id?}");
             });
         }
     }
