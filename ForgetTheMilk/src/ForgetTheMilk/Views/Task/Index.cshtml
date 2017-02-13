@@ -1,4 +1,4 @@
-﻿@model List<string>
+﻿@model List<ForgetTheMilk.Controllers.Task>
 
 @{
     ViewData["Title"] = "Home Page";
@@ -15,13 +15,17 @@
 <table class="table">
     <tr>
         <th>Description</th>
+        <th>Due Date</th>
     </tr>
     <tbody>
     @foreach (var task in Model)
     {
         <tr>
             <td>
-                @task
+                @task.Description
+            </td>
+            <td>
+                @(task.DueDate.HasValue ? task.DueDate.Value.ToString("d") : "")
             </td>
         </tr>
     }
