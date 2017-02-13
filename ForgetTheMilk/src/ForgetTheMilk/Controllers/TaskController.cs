@@ -10,7 +10,16 @@ namespace ForgetTheMilk.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View(Tasks);
+        }
+
+        public static readonly List<string> Tasks = new List<string>();
+
+        [HttpPost]
+        public IActionResult Add(string task)
+        {
+            Tasks.Add(task);
+            return RedirectToAction("Index");
         }
 
         public IActionResult Error()
